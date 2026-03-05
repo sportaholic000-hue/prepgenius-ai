@@ -1,0 +1,45 @@
+# ===========================================================================
+# PrepGenius AI — Render Blueprint (Infrastructure as Code)
+# ===========================================================================
+# Deploy: Connect this repo on Render dashboard -> it auto-detects this file.
+# Docs:   https://docs.render.com/blueprint-spec
+# ===========================================================================
+
+services:
+  # -------------------------------------------------------------------------
+  # Web Service — FastAPI backend
+  # -------------------------------------------------------------------------
+  - type: web
+    name: prepgenius-api
+    runtime: docker
+    region: oregon
+    plan: free
+    branch: main
+    autoDeploy: true
+
+    # Docker config
+    dockerfilePath: ./Dockerfile.render
+    dockerContext: .
+
+    # Health check — Render pings this to verify the service is alive
+    healthCheckPath: /api/health
+
+    # Environment variables
+    envVars:
+      # OpenAI API key — set manually in Render dashboard (never commit this)
+      - key: OPENAI_API_KEY
+        sync: false
+
+      # Port — Render injects $PORT, but we set a default for consistency
+      - key: PORT
+        value: "8000"
+
+      # OpenAI model — override if needed (default: gpt-4o-mini in app code)
+      - key: OPENAI_MODEL
+        value: "gpt-4o-mini"
+
+      # Python environment
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      - key: PYTHONDONTWRITEBYTECODE
+        value: "1"

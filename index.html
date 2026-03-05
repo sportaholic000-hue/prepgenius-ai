@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>PrepGenius AI - AI Meal Prep Planner</title>
+<meta name="description" content="AI-powered meal prep planner. 7-day meal plans with macros, grocery lists, and cost estimates in 60 seconds.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>html{scroll-behavior:smooth}@keyframes pulse-btn{0%,100%{box-shadow:0 0 0 0 rgba(5,150,105,.4)}50%{box-shadow:0 0 0 12px rgba(5,150,105,0)}}.pulse-btn{animation:pulse-btn 2s infinite}</style>
+</head>
+<body class="font-['Inter'] text-gray-900 bg-white">
+<nav class="fixed top-0 w-full bg-white/90 backdrop-blur z-50 border-b border-gray-100">
+<div class="max-w-6xl mx-auto flex items-center justify-between px-4 h-16">
+<a href="#" class="text-xl font-extrabold text-emerald-600">PrepGenius<span class="text-gray-900">AI</span></a>
+<div class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
+<a href="#how">How It Works</a><a href="#pricing">Pricing</a>
+</div>
+<a href="#hero" class="bg-emerald-600 text-white text-sm font-semibold px-5 py-2.5 rounded-lg">Try Free</a>
+</div>
+</nav>
+
+<section id="hero" class="pt-28 pb-20 bg-gradient-to-b from-emerald-50 to-white">
+<div class="max-w-4xl mx-auto px-4 text-center">
+<p class="text-emerald-600 font-semibold text-sm uppercase tracking-wide mb-4">AI-Powered Meal Prep Planner</p>
+<h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">Your AI Nutritionist.<br>60 Seconds. Zero Guesswork.</h1>
+<p class="text-lg text-gray-600 max-w-2xl mx-auto mb-10">Tell us your fitness goal and dietary needs. Get a complete 7-day meal plan with macros, grocery list, prep instructions, and cost estimate -- instantly.</p>
+<div class="max-w-xl mx-auto bg-white rounded-2xl shadow-xl border p-8 text-left">
+<div class="mb-5">
+<label class="block text-sm font-semibold mb-2">Fitness Goal</label>
+<select id="goal" class="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-emerald-500 outline-none">
+<option value="cut">Cut - Lose fat, keep muscle</option>
+<option value="bulk">Bulk - Build muscle</option>
+<option value="maintain">Maintain</option>
+<option value="recomp">Recomp</option>
+</select></div>
+<div class="mb-5">
+<label class="block text-sm font-semibold mb-2">Dietary Restrictions</label>
+<div class="flex flex-wrap gap-2" id="restrictions">
+<label class="flex items-center gap-1.5 bg-gray-50 border rounded-lg px-3 py-2 text-sm cursor-pointer"><input type="checkbox" value="vegetarian" class="accent-emerald-600"> Vegetarian</label>
+<label class="flex items-center gap-1.5 bg-gray-50 border rounded-lg px-3 py-2 text-sm cursor-pointer"><input type="checkbox" value="vegan" class="accent-emerald-600"> Vegan</label>
+<label class="flex items-center gap-1.5 bg-gray-50 border rounded-lg px-3 py-2 text-sm cursor-pointer"><input type="checkbox" value="keto" class="accent-emerald-600"> Keto</label>
+<label class="flex items-center gap-1.5 bg-gray-50 border rounded-lg px-3 py-2 text-sm cursor-pointer"><input type="checkbox" value="gluten-free" class="accent-emerald-600"> Gluten-Free</label>
+<label class="flex items-center gap-1.5 bg-gray-50 border rounded-lg px-3 py-2 text-sm cursor-pointer"><input type="checkbox" value="dairy-free" class="accent-emerald-600"> Dairy-Free</label>
+</div></div>
+<div class="mb-6">
+<label class="block text-sm font-semibold mb-2">Anything else? <span class="text-gray-400 font-normal">(optional)</span></label>
+<input id="details" type="text" placeholder="Budget under $80, I hate broccoli..." class="w-full border rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-emerald-500">
+</div>
+<button onclick="alert('Demo mode! Deploy the API backend to enable live generation. Visit github.com/sportaholic000-hue/prepgenius-ai for setup instructions.')" class="w-full bg-emerald-600 text-white font-bold text-lg py-4 rounded-xl hover:bg-emerald-700 pulse-btn">Generate My Meal Plan &rarr;</button>
+<p class="text-center text-xs text-gray-400 mt-3">Free -- no signup required. 1 plan per week.</p>
+</div></div>
+</section>
+
+<section id="how" class="py-20">
+<div class="max-w-5xl mx-auto px-4 text-center">
+<h2 class="text-3xl font-extrabold mb-12">How PrepGenius Works</h2>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-emerald-50 rounded-2xl p-8"><div class="w-14 h-14 bg-emerald-600 text-white rounded-xl flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div><h3 class="font-bold mb-2">Set Your Goal</h3><p class="text-gray-600 text-sm">Choose cut, bulk, maintain, or recomp.</p></div>
+<div class="bg-emerald-50 rounded-2xl p-8"><div class="w-14 h-14 bg-emerald-600 text-white rounded-xl flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div><h3 class="font-bold mb-2">Get Your Plan</h3><p class="text-gray-600 text-sm">AI generates 7 days with macros and grocery list.</p></div>
+<div class="bg-emerald-50 rounded-2xl p-8"><div class="w-14 h-14 bg-emerald-600 text-white rounded-xl flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div><h3 class="font-bold mb-2">Prep & Eat</h3><p class="text-gray-600 text-sm">Follow the batch prep guide. Cook once, eat all week.</p></div>
+</div></div>
+</section>
+
+<section id="pricing" class="py-20 bg-gray-50">
+<div class="max-w-4xl mx-auto px-4 text-center">
+<h2 class="text-3xl font-extrabold mb-12">Simple Pricing</h2>
+<div class="grid md:grid-cols-3 gap-6">
+<div class="bg-white rounded-2xl p-8 border text-left"><h3 class="font-bold">Free</h3><p class="text-4xl font-extrabold my-2">$0</p><p class="text-gray-400 text-sm mb-6">forever</p><ul class="space-y-2 text-sm text-gray-600 mb-6"><li>&#10003; 1 plan/week</li><li>&#10003; Full 7-day plan</li><li>&#10003; Basic grocery list</li></ul><a href="#hero" class="block text-center border-2 rounded-xl py-3 font-semibold">Get Started</a></div>
+<div class="bg-emerald-600 rounded-2xl p-8 text-left text-white relative shadow-xl scale-105"><span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-full">MOST POPULAR</span><h3 class="font-bold">Pro</h3><p class="text-4xl font-extrabold my-2">$9.99</p><p class="text-emerald-200 text-sm mb-6">/month</p><ul class="space-y-2 text-sm text-emerald-100 mb-6"><li>&#10003; Unlimited plans</li><li>&#10003; PDF export</li><li>&#10003; Recipe scaling</li><li>&#10003; Save favorites</li></ul><a href="https://whop.com/checkout/plan_5eVAdInlAOmZp" class="block text-center bg-white text-emerald-700 rounded-xl py-3 font-bold">Upgrade to Pro</a></div>
+<div class="bg-white rounded-2xl p-8 border text-left"><h3 class="font-bold">Team</h3><p class="text-4xl font-extrabold my-2">$24.99</p><p class="text-gray-400 text-sm mb-6">/month</p><ul class="space-y-2 text-sm text-gray-600 mb-6"><li>&#10003; Everything in Pro</li><li>&#10003; Family plans</li><li>&#10003; Shared calendar</li></ul><a href="https://whop.com/checkout/plan_5eVAdInlAOmZp" class="block text-center border-2 rounded-xl py-3 font-semibold">Get Team</a></div>
+</div></div>
+</section>
+
+<footer class="py-12 bg-gray-900 text-white text-center">
+<h3 class="text-xl font-bold mb-6">Get Weekly Meal Prep Tips</h3>
+<form onsubmit="event.preventDefault();this.querySelector('input').value='';document.getElementById('ty').classList.remove('hidden')" class="flex gap-2 max-w-md mx-auto mb-4">
+<input type="email" placeholder="Your email" required class="flex-1 px-4 py-3 rounded-lg text-gray-900">
+<button class="bg-emerald-600 px-6 py-3 rounded-lg font-semibold">Subscribe</button>
+</form>
+<p id="ty" class="text-emerald-400 text-sm hidden mb-4">You're in!</p>
+<p class="text-gray-600 text-xs mt-8">&copy; 2026 PrepGenius AI</p>
+</footer>
+</body></html>
